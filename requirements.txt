@@ -5,6 +5,10 @@
 fastapi==0.115.0
 uvicorn[standard]==0.34.0
 
+# LangGraph & LLM
+langgraph==0.2.24
+openai==1.46.0
+
 # Database
 sqlalchemy==2.0.35
 psycopg2-binary==2.9.9
