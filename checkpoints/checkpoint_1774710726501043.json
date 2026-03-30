@@ -1,0 +1,5 @@
+{
+  "invocation_id": "1774710726501043",
+  "state": "{\"invocation_id\":\"1774710726501043\",\"workflow_id\":null,\"user_id\":1,\"created_at\":\"2026-03-28T21:12:06.501065\",\"started_at\":\"2026-03-28T21:12:06.501025\",\"completed_at\":\"2026-03-28T21:12:09.217940\",\"status\":\"failed\",\"current_step\":null,\"step_results\":[],\"ingestion_data\":{},\"reconciliation_data\":{},\"chasing_data\":{},\"reporting_data\":{},\"last_error\":\"Type is not msgpack serializable: StepResult\",\"retry_policy\":{\"max_retries\":3,\"retry_delay_seconds\":5,\"exponential_backoff\":true},\"checkpoint_key\":null,\"last_checkpoint_at\":null,\"config\":{}}",
+  "timestamp": "2026-03-28T21:12:09.218004"
+}

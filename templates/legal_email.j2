@@ -1,0 +1,16 @@
+Subject: FINAL NOTICE: Invoice {{ invoice.invoice_number }} - Legal Action Imminent
+
+Dear {{ invoice.vendor_name }},
+
+This is a final notice regarding invoice {{ invoice.invoice_number }} for ${{ "%.2f"|format(invoice.amount_due) }} that has been overdue for {{ (today - invoice.due_date).days }} days (due date: {{ invoice.due_date.strftime('%B %d, %Y') }}).
+
+Despite previous reminders, payment has not been received. We must inform you that if payment is not received within 5 business days, we will have no choice but to pursue legal action to recover the outstanding amount, which may include filing a claim in small claims court or engaging a collection agency.
+
+Such action may result in additional costs, including court fees and interest, which will be added to the outstanding balance.
+
+To avoid legal proceedings, please remit payment immediately via [payment methods] or contact us at [phone number] to discuss payment options.
+
+We regret having to take this step and hope to resolve this matter amicably.
+
+Govern yourself accordingly,
+Legal Department

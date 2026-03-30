@@ -1,0 +1,14 @@
+Subject: Urgent: Invoice {{ invoice.invoice_number }} Payment Overdue
+
+Dear {{ invoice.vendor_name }},
+
+This is an urgent reminder that your invoice {{ invoice.invoice_number }} for ${{ "%.2f"|format(invoice.amount_due) }} has been overdue for {{ (today - invoice.due_date).days }} days, with a due date of {{ invoice.due_date.strftime('%B %d, %Y') }}.
+
+Please arrange immediate payment to avoid potential service disruption or additional late fees. If payment has been sent, please provide the transaction details so we can update our records.
+
+If you are experiencing difficulties with payment, please contact us immediately to discuss possible arrangements.
+
+We value your business and hope to resolve this matter promptly.
+
+Sincerely,
+Accounts Receivable Department

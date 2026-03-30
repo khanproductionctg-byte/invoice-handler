@@ -1,0 +1,43 @@
+# GitHub Actions: Auto-deploy to Oracle Cloud VM
+# Triggers on push to main branch
+# Deploys via SSH to your VM
+
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to VM via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            cd /opt/invoice-handler
+            
+            # Pull latest code
+            git pull origin main
+            
+            # Rebuild and restart containers
+            docker compose -f docker-compose.prod.yml down
+            docker compose -f docker-compose.prod.yml build --no-cache
+            docker compose -f docker-compose.prod.yml up -d
+            
+            # Wait for health check
+            sleep 10
+            
+            # Check status
+            docker compose -f docker-compose.prod.yml ps
+            
+            echo "✅ Deployment complete!"

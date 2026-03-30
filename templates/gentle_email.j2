@@ -1,0 +1,14 @@
+Subject: Friendly Reminder: Invoice {{ invoice.invoice_number }} Payment Due
+
+Dear {{ invoice.vendor_name }},
+
+This is a friendly reminder that your invoice {{ invoice.invoice_number }} for ${{ "%.2f"|format(invoice.amount_due) }} was due on {{ invoice.due_date.strftime('%B %d, %Y') }}.
+
+As of today, this invoice is {{ (today - invoice.due_date).days }} days overdue. We kindly ask you to arrange payment at your earliest convenience to avoid any late fees or service interruptions.
+
+If you have already sent payment, please disregard this notice and accept our thanks.
+
+Please let us know if you have any questions or need assistance.
+
+Best regards,
+Accounts Receivable Team

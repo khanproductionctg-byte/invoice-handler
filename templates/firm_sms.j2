@@ -1,0 +1,1 @@
+URGENT: Invoice {{ invoice.invoice_number }} overdue by {{ (today - invoice.due_date).days }} days. Amount: ${{ "%.2f"|format(invoice.amount_due) }}. Pay now to avoid action.
