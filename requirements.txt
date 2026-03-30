@@ -18,7 +18,7 @@ redis==5.0.5
 slowapi==0.1.9
 
 # Integrations
-plaid-python==13.2.0
+plaid-python==13.0.0
 xero-python==4.15.0
 quickbooks-python==4.0.0
 google-api-python-client==2.155.0
